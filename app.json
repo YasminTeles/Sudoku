@@ -1,0 +1,12 @@
+{
+  "name": "Sudoku",
+  "displayName": "Sudoku",
+  "expo": {
+    "name": "Sudoku",
+    "slug": "Sudoku",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
