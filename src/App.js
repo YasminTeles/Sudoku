@@ -10,6 +10,7 @@ import {
 import AppLoading from "expo-app-loading"
 import { StatusBar } from "expo-status-bar"
 
+import Board from "./components/Board/Board"
 import Header from "./components/Header/Header"
 
 const styles = StyleSheet.create({
@@ -33,6 +34,7 @@ export const App = () => {
     <View style={styles.container}>
       <StatusBar style="light" />
       <Header />
+      <Board />
     </View>
   )
 }
