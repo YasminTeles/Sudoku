@@ -12,12 +12,14 @@ import { StatusBar } from "expo-status-bar"
 
 import Board from "./components/Board/Board"
 import Header from "./components/Header/Header"
+import Keyboard from "./components/Keyboard/Keyboard"
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#272956",
     alignItems: "center",
+    justifyContent: "space-between",
   },
 })
 
@@ -35,6 +37,7 @@ export const App = () => {
       <StatusBar style="light" />
       <Header />
       <Board />
+      <Keyboard />
     </View>
   )
 }
