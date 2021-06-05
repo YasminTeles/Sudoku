@@ -1,28 +1,27 @@
 import React from "react"
-import { StyleSheet, View } from "react-native"
+
+import styled from "styled-components/native"
 
 import { createBoard, getPositionByBoard } from "../../utils/board"
 import Squad from "./Squad"
 
 const board = createBoard()
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
+const Container = styled.View`
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
 
-    borderRadius: 5,
-    backgroundColor: "#1F214E",
-    margin: 5,
+  background: #1F214E;
 
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-})
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`
 
 export const Board = () => (
-  <View style={styles.container}>
+  <Container>
     {board.map((value, index) => {
       const [line, column] = getPositionByBoard(index)
       return (
@@ -34,7 +33,7 @@ export const Board = () => (
         />
       )
     })}
-  </View>
+  </Container>
 )
 
 export default Board

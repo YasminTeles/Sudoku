@@ -1,53 +1,37 @@
 import React from "react"
-import { StyleSheet, Text } from "react-native"
 
 import PropTypes from "prop-types"
+import styled from "styled-components/native"
 
 import { isOddQuadrant } from "../../utils/quadrant"
 
-const styles = StyleSheet.create({
-  text: {
-    paddingBottom: 4,
-    paddingTop: 4,
-    paddingLeft: 12,
-    paddingRight: 12,
+const Number = styled.Text`
+  font-family: "ComicNeue_700Bold";
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 
-    borderRadius: 5,
+  width: 38px;
+  height:38px;
 
-    margin: 2,
+  margin: 2px;
+  padding: 4px 12px;
+  border-radius: 5px;
 
-    width: 38,
-    height: 38,
-
-    color: "#FFF",
-    fontWeight: "bold",
-    fontSize: 24,
-    fontFamily: "ComicNeue_700Bold",
-  },
-  oddQuadrant: {
-    backgroundColor: "#6061BC",
-  },
-  evenQuadrant: {
-    backgroundColor: "#424392",
-  },
-})
-
-const getStyle = (line, column) => {
-  const style = isOddQuadrant(line, column) ? styles.oddQuadrant : styles.evenQuadrant
-
-  return StyleSheet.compose(styles.text, style)
-}
+  background: ${({ inOddQuadrant }) => (inOddQuadrant ? "#6061BC" : "#424392")};
+`
 
 const getLabel = (value) => (value === "0" ? "" : value)
 
 export const Squad = ({ value, line, column }) => {
-  const style = getStyle(line, column)
+  const inOddQuadrant = isOddQuadrant(line, column)
   const label = getLabel(value)
 
   return (
-    <Text style={style}>
+    <Number inOddQuadrant={inOddQuadrant}>
       {label}
-    </Text>
+    </Number>
   )
 }
 
