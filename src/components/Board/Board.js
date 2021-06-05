@@ -1,11 +1,10 @@
 import React from "react"
 import { StyleSheet, View } from "react-native"
 
-import { BOARD_DIMENSION } from "../../constants"
-import { getPositionByBoard } from "../../utils/board"
+import { createBoard, getPositionByBoard } from "../../utils/board"
 import Squad from "./Squad"
 
-const board = Array(BOARD_DIMENSION).fill("")
+const board = createBoard()
 
 const styles = StyleSheet.create({
   container: {

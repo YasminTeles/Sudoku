@@ -38,12 +38,15 @@ const getStyle = (line, column) => {
   return StyleSheet.compose(styles.text, style)
 }
 
+const getLabel = (value) => (value === "0" ? "" : value)
+
 export const Squad = ({ value, line, column }) => {
   const style = getStyle(line, column)
+  const label = getLabel(value)
 
   return (
     <Text style={style}>
-      {value}
+      {label}
     </Text>
   )
 }
@@ -55,7 +58,7 @@ Squad.propTypes = {
 }
 
 Squad.defaultProps = {
-  value: "",
+  value: "0",
 }
 
 export default Squad
