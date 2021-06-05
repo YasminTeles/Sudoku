@@ -1,17 +1,16 @@
 import React from "react"
-import { Text, StyleSheet } from "react-native"
 
-const styles = StyleSheet.create({
-  title: {
-    color: "#5E60AA",
-    fontWeight: "bold",
-    fontSize: 24,
-    fontFamily: "ComicNeue_700Bold",
-  },
-})
+import styled from "styled-components/native"
+
+const Text = styled.Text`
+  font-family: "ComicNeue_700Bold";
+  font-size: 35px;
+  font-weight: bold;
+  color: #5E60AA;
+`
 
 export const Title = () => (
-  <Text style={styles.title}>
+  <Text>
     Sudoku
   </Text>
 )

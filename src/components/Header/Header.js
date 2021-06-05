@@ -1,19 +1,17 @@
 import React from "react"
-import { StyleSheet, View } from "react-native"
+
+import styled from "styled-components/native"
 
 import Title from "./Title"
 
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 40,
-    paddingBottom: 30,
-  },
-})
+const Container = styled.Text`
+  padding-top: 40px;
+`
 
 export const Header = () => (
-  <View style={styles.container}>
+  <Container>
     <Title />
-  </View>
+  </Container>
 )
 
 export default Header
